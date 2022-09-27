@@ -1,5 +1,4 @@
 asgiref==3.5.2
-boto==2.49.0
 dj-database-url==1.0.0
 Django==4.1.1
 django-database-url==1.0.3
