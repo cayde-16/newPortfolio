@@ -9,6 +9,8 @@
 html{
     font-size: 10px;
     font-family:'Montserrat', sans-serif;
+    width: 100vw;
+    height: 100vh;
 }
 a{
     text-decoration: none;
@@ -506,6 +508,7 @@ img{
     border-radius: 4px;
     font-size: 20px;
     cursor: pointer;
+    outline: none;
 }
 /* end projects section */
 
@@ -716,6 +719,18 @@ img{
     #contact .contact-items{
         width: auto;
         
+    }
+
+    #section-title-project{
+        flex-direction: column;
+    }
+
+    #section-title-contact{
+        flex-direction: column;
+    }
+
+    #projects .project-info h1{
+        font-size: 3rem;
     }
 }
 /* End of Media Query **Phones** */
