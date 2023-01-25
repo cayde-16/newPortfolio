@@ -33,8 +33,9 @@ img{
     color: black;
     margin: 10px;
     letter-spacing: .2rem;
-    display: block;
+    display: flex;
     text-align: center;
+    justify-content: center;
 
 }
 .brand h1{
@@ -118,7 +119,7 @@ img{
     height:100vh;
     top: 0;
     left: 0;
-    left: 100%;
+    left: 180%;
     z-index: 1;
     overflow-x: hidden;
     transition: .5s ease left;
@@ -332,7 +333,7 @@ img{
     padding: 100px 0;
 }
 #service .service-top{
-    width: 480px;
+    /* width: auto; */
     margin: 0 auto;
 }
 #service .service-top p{
@@ -408,6 +409,7 @@ img{
 /* End Service Section */
 
 /* start projects section */
+
 #projects .projects{
     flex-direction: column;
     max-width: 1200px;
@@ -696,6 +698,27 @@ img{
     }
 }
 /* End Keyframes */
+
+
+/* start Media Query **Phones** */
+@media screen and (min-width:480px){
+    .service-top{
+        width: auto;
+    }
+}
+
+@media screen and (max-width:425px) {
+    #section-title-project{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact .contact-items{
+        width: auto;
+        
+    }
+}
+/* End of Media Query **Phones** */
 
 /* start Media Query **Tablet**  */
 @media only screen and (min-width:760px){
