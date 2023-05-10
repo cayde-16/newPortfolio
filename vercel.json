@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src":"newPortfolio/static/**",
+            "use": "@vercel/static"
+        },
+        {
+            "src":"newPortfolio/new_portfolio/**",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes":[
+        {
+            "src": "/static/(.*)",
+            "dest": "/newPortfolio/static/$1"
+        },
+        {
+            "src":"/(.*)",
+            "dest":"/newPortfolio/new_portfolio/$1"
+        }
+    ]
+}
