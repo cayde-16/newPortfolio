@@ -5,16 +5,6 @@
         "destination": "/new_portfolio/wsgi.py"
       }
     ],
-    "builds": [{
-      "web": "gunicorn new_portfolio.wsgi:application --bind 0.0.0.0:$PORT",
-      "functions": {
-        "api/*": {
-          "runtime": "python3.11",
-          "memory": 128,
-          "maxDuration": 10
-        }
-      }
-    }],
     "routes": [
       {
         "src": "/static/(.*)",

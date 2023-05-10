@@ -31,7 +31,7 @@ VERCEL_ENV = bool(os.environ.get('VERCEL_ENV'))
 VERCEL_GIT_COMMIT_SHA = os.environ.get('VERCEL_GIT_COMMIT_SHA')
 DEBUG = not VERCEL_ENV
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0','cadeportfolio.herokuapp.com','new-portfolio-alpha-red.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0','cadeportfolio.herokuapp.com','new-portfolio-cayde-16.vercel.app']
 
 
 # Application definition
