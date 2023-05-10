@@ -1,23 +1,36 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src":"newPortfolio/static/**",
-            "use": "@vercel/static"
-        },
-        {
-            "src":"newPortfolio/new_portfolio/**",
-            "use": "@vercel/python"
-        }
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/new_portfolio/wsgi.py"
+      }
     ],
-    "routes":[
-        {
-            "src": "/static/(.*)",
-            "dest": "/newPortfolio/static/$1"
-        },
-        {
-            "src":"/(.*)",
-            "dest":"/newPortfolio/new_portfolio/$1"
+    "builds": {
+      "web": "gunicorn new_portfolio.wsgi:application --bind 0.0.0.0:$PORT",
+      "functions": {
+        "api/*": {
+          "runtime": "python3.11",
+          "memory": 128,
+          "maxDuration": 10
         }
+      }
+    },
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/newPortfolio/static/$1"
+      },
+      {
+        "src": "/favicon.ico",
+        "dest": "/new_portfolio/static/favicon.ico"
+      },
+      {
+        "handle": "filesystem"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/new_portfolio/wsgi.py"
+      }
     ]
-}
+  }
+  
