@@ -17,3 +17,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'new_portfolio.settings')
 application = get_wsgi_application()
 application = WhiteNoise(application, root="static")
 
+app = application
+

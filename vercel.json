@@ -1,26 +1,24 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/new_portfolio/wsgi.py"
-      }
+    "version": 2,
+    "builds": [
+        {
+            "src":"newPortfolio/static/**",
+            "use": "@vercel/static",
+            "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+        },
+        {
+            "src":"newPortfolio/new_portfolio/**",
+            "use": "@vercel/python"
+        }
     ],
-    "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/newPortfolio/static/$1"
-      },
-      {
-        "src": "/favicon.ico",
-        "dest": "/new_portfolio/static/favicon.ico"
-      },
-      {
-        "handle": "filesystem"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/new_portfolio/wsgi.py"
-      }
+    "routes":[
+        {
+            "src": "/static/(.*)",
+            "dest": "/newPortfolio/static/$1"
+        },
+        {
+            "src":"/(.*)",
+            "dest":"/new_portfolio/wsgi.py"
+        }
     ]
-  }
-  
+}
