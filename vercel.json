@@ -3,7 +3,8 @@
     "builds": [
         {
             "src":"newPortfolio/static/**",
-            "use": "@vercel/static"
+            "use": "@vercel/static",
+            "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
         },
         {
             "src":"newPortfolio/new_portfolio/**",
@@ -17,7 +18,7 @@
         },
         {
             "src":"/(.*)",
-            "dest":"/newPortfolio/new_portfolio/$1"
+            "dest":"/new_portfolio/wsgi.py"
         }
     ]
 }
