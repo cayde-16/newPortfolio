@@ -31,7 +31,7 @@ VERCEL_ENV = bool(os.environ.get('VERCEL_ENV'))
 VERCEL_GIT_COMMIT_SHA = os.environ.get('VERCEL_GIT_COMMIT_SHA')
 DEBUG = not VERCEL_ENV
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0','cadeportfolio.herokuapp.com','.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0','cadeportfolio.herokuapp.com','.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'new_portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 
@@ -128,11 +128,14 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = '/images/'
 
-STATICFILES_DIRS = [
-    BASE_DIR/ 'static'
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR/ 'static'
+# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
