@@ -460,8 +460,11 @@ img{
     color: white;
     
 }
+#projects .project-info p{
+    padding-bottom: 2rem;
+}
 #projects .project-info h1{
-    font-size: 4rem;
+    font-size: 3.8rem;
     font-weight: 500;
 }
 #projects .project-info h2{
@@ -573,6 +576,10 @@ img{
     border: 7px solid crimson;
     z-index: -1;
 
+}
+
+#about .ocupa{
+    margin-top: 3rem;
 }
 /* End of about section */
 
