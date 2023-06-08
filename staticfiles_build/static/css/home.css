@@ -238,7 +238,7 @@ img{
 
 /* Start Hero Section */
 #hero{
-    background-image:url("/static/images/escr.jpg");
+    background-image:url("/static/images/coding-background.webp");
     background-size: cover;
     background-position: top center;
     position: relative;
