@@ -277,12 +277,16 @@ img{
     
     
 }
+/* #hero .fe{
+    color: crimson;
+} */
 #hero h1:nth-child(1){
     animation-delay: 1s; 
     
 }
 #hero h1:nth-child(2){
-    animation-delay: 2s; 
+    animation: text-reveal-name 1s ease forwards;
+    animation-delay: 1.9s;
 }
 #hero h1:nth-child(3){
     animation: text-reveal-name 1s ease forwards;
@@ -296,7 +300,7 @@ img{
 
 #hero h1:nth-child(2) span{
     animation-delay: 1.5s;  
-    
+    color: crimson;
 }
 
 #hero h1:nth-child(3) span{
